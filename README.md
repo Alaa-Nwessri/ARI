@@ -29,7 +29,7 @@ Combines path cost and heuristic guidance using:
 Manhattan heuristic
 Noise-aware admissible heuristic
 
-- Heuristics :
+ Heuristics :
 * Manhattan Distance
 Standard admissible and consistent heuristic for grid worlds.
 * Noise-Aware Confidence Heuristic
