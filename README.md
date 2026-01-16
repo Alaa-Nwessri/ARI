@@ -11,10 +11,9 @@ An agent navigates a finite 2D grid environment with obstacles.
 The goal is to find a path from a start cell to a goal cell that minimizes the true path cost, while the agent observes noisy action costs during search.
 
 The project evaluates:
-Uniform Cost Search (UCS)
-Greedy Best-First Search
-A* Search with different heuristics
-
+* Uniform Cost Search (UCS)
+* Greedy Best-First Search
+* A* Search with different heuristics
 under both normal and pathological grid configurations.
 
 -Algorithms Implemented:
@@ -31,10 +30,9 @@ Manhattan heuristic
 Noise-aware admissible heuristic
 
 - Heuristics :
-1- Manhattan Distance
+* Manhattan Distance
 Standard admissible and consistent heuristic for grid worlds.
-
-2- Noise-Aware Confidence Heuristic
+* Noise-Aware Confidence Heuristic
 A conservative heuristic designed to preserve admissibility under bounded cost noise.
 
 -Experimental Evaluation:
@@ -44,3 +42,11 @@ Re-expansions in A*
 Path optimality under true cost
 Behavior in pathological grid layouts
 Results are visualized using simple plots to compare algorithm behavior.
+
+## How to Run
+1. Install required dependencies:
+   pip install numpy matplotlib
+
+2. Run the experiments:
+   python experiments.py
+
