@@ -6,7 +6,7 @@ from search import (
     a_star_search,
     reconstruct_path
 )
-from heuristics import manhattan, h_conf
+from heuristics import manhattan, h_conf , h_inadmissible
 from plots import (
     plot_node_expansions,
     plot_reexpansions,
@@ -112,7 +112,7 @@ print("Re-expansions:", re_a)
 
 
 # A* (Noise-aware heuristic)
-print("\n A* (Noise-aware heuristic)")
+print("\n A* (Noise-aware heuristic) ")
 came_c, obs_c, true_c, exp_c, re_c = a_star_search(
     grid,
     cost_model,
@@ -125,6 +125,23 @@ print("Observed cost:", obs_c[grid.goal])
 print("True cost:", true_c[grid.goal])
 print("Expanded:", exp_c)
 print("Re-expansions:", re_c)
+
+
+
+# A* (Inadmissible heuristic - 1.5x Manhattan)
+print("\n A* (Inadmissible heuristic - 1.5x Manhattan) ")
+came_i, obs_i, true_i, exp_i, re_i = a_star_search(
+    grid,
+    cost_model,
+    heuristic=lambda s, g: h_inadmissible(s, g)
+)
+
+path_i = reconstruct_path(came_i, grid.start, grid.goal)
+print("Path:", path_i)
+print("Observed cost:", obs_i[grid.goal])
+print("True cost:", true_i[grid.goal])
+print("Expanded:", exp_i)
+print("Re-expansions:", re_i)
 
 
 
